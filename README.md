@@ -28,19 +28,19 @@ date || credit || debit || balance
 
 ### Planning
 
-**Domain Model**
+To plan my solution, I created a **Domain Model** (initially with classes for Withdrawal and Deposit, but I have since iterated)
 
 |Noun | Verb |
 |--------|--------|
-| account | create <br> balance <br> transaction_history <br> |
-| deposit | date <br> amount <br> record_transaction |
-| withdrawal | date <br> amount <br> record_transaction|
-| statement | print_header <br> print_transaction |
+| account | create <br> has_balance <br> reduces_balance <br> increases_balance <br> records_transactions |
+| statement | prints_header <br> print_transactions |
 
 
 ### Approach
 
-How I solved the challenge here
+
+
+### Stack
 
 This application was built using the following:
 * Ruby 2.4.0
@@ -48,6 +48,28 @@ This application was built using the following:
 * Rubocop
 * Simple Cov
 
+### Test Coverage
+
+![Image](http://i.imgur.com/GWo9wXE.png)
+
 ### How to Use
 
-Instructions for how to use go here
+Clone this repo
+
+```
+git clone git@github.com:annalaise/bank_tech_test.git
+bundle install
+rspec
+```
+
+To see end to end features, within the cloned directory open IRB and paste the following:
+```
+require './lib/account.rb'
+require './lib/statement.rb'
+account = Account.new
+statement = Statement.new(account)
+account.deposit(1000)
+account.deposit(2000)
+account.withdrawal(500)
+statement.print_statement
+```
