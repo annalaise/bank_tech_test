@@ -1,9 +1,9 @@
 require 'rspec'
-require 'factory_girl'
 require 'simplecov'
 require 'simplecov-console'
 
 require './lib/account.rb'
+require './lib/statement.rb'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -22,11 +22,5 @@ RSpec.configure do |config|
   end
 
   config.shared_context_metadata_behavior = :apply_to_host_groups
-
-  config.include FactoryGirl::Syntax::Methods
-
-  config.before(:suite) do
-   FactoryGirl.find_definitions
-  end
 
 end
