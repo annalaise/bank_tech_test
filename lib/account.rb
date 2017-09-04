@@ -1,6 +1,6 @@
 class Account
 
-  attr_accessor :balance, :transaction_history
+  attr_reader :balance, :transaction_history
 
   def initialize
     @balance = 0
@@ -18,7 +18,6 @@ class Account
   end
 
   private
-
   def get_date
     return (Time.now).strftime("%d/%m/%Y")
   end
