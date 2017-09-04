@@ -1,0 +1,30 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/annalaisegibbons/Projects/bank_tech_test/spec/balance_spec.rb": [
+
+      ],
+      "/Users/annalaisegibbons/Projects/bank_tech_test/spec/client_spec.rb": [
+        1,
+        null,
+        2,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/annalaisegibbons/Projects/bank_tech_test/spec/deposit_spec.rb": [
+
+      ],
+      "/Users/annalaisegibbons/Projects/bank_tech_test/spec/statement_spec.rb": [
+
+      ],
+      "/Users/annalaisegibbons/Projects/bank_tech_test/spec/withdrawal_spec.rb": [
+
+      ]
+    },
+    "timestamp": 1504524690
+  }
+}
