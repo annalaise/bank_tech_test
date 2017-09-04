@@ -39,10 +39,12 @@
         null,
         1,
         1,
-        1,
         null,
         null,
         null,
+        null
+      ],
+      "/Users/annalaisegibbons/Projects/bank_tech_test/spec/end_to_end_spec.rb": [
         null
       ],
       "/Users/annalaisegibbons/Projects/bank_tech_test/spec/statement_spec.rb": [
@@ -61,6 +63,6 @@
         null
       ]
     },
-    "timestamp": 1504538189
+    "timestamp": 1504540752
   }
 }

@@ -4,13 +4,30 @@ class Statement
     @account = account
   end
 
-  def print_header
+  def print_statement
+    header
+    body
+  end
+
+private
+
+  def header
     puts "date || credit || debit || balance"
   end
 
-  def print_body
-    @account.transaction_history do | transaction |
+  def body
+    @account.transaction_history.reverse_each do | transaction |
+    case transaction[:transaction]
 
+      when "deposit"
+        puts "#{transaction[:date]} || #{transaction[:amount]}  || || #{transaction[:balance]}"
+
+      when "withdrawal"
+        puts "#{transaction[:date]} || || #{transaction[:amount]} || #{transaction[:balance]}"
+
+      else
+        return "transaction error"
+      end
     end
   end
 

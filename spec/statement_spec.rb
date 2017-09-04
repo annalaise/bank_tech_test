@@ -1,12 +1,12 @@
 describe Statement do
-  let(:account) { double(:account) }
+  let(:account) { Account.new }
   subject(:statement) { described_class.new(account) }
 
   it 'prints the header to stdout' do
-    expect { statement.print_header }.to output("date || credit || debit || balance\n").to_stdout
+    expect { print_statement }.to output("date || credit || debit || balance\n").to_stdout
   end
 
-  it 'prints the body to stdout' do
+  it 'prints transactions in reverse order' do
 
   end
 

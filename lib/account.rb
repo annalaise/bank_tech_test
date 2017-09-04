@@ -8,18 +8,18 @@ class Account
   end
 
   def deposit(amount)
-    transaction_history << { date: get_date, transaction: "deposit", amount: amount }
     increase_balance(amount)
+    transaction_history << { date: get_date, transaction: "deposit", amount: amount, balance: balance }
   end
 
   def withdrawal(amount)
-    transaction_history << { date: get_date, transaction: "withdrawal", amount: amount }
     decrease_balance(amount)
+    transaction_history << { date: get_date, transaction: "withdrawal", amount: amount, balance: balance }
   end
 
 private
   def get_date
-    return (Time.now).strftime("%d/%m/%Y")
+    (Time.now).strftime("%d/%m/%Y")
   end
 
   def decrease_balance(amount)
