@@ -32,7 +32,7 @@ date || credit || debit || balance
 
 |Noun | Verb |
 |--------|--------|
-| client | create <br> balance <br> transaction_history <br> |
+| account | create <br> balance <br> transaction_history <br> |
 | deposit | date <br> amount <br> record_transaction |
 | withdrawal | date <br> amount <br> record_transaction|
 | statement | print_header <br> print_transaction |
