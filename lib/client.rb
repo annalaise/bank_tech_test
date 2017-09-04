@@ -1,15 +1,9 @@
 class Client
 
-  def self.create
-    @client = Client.new
-  end
+  attr_reader :balance
 
-  def self.instance
-    @client
-  end
-
-  def self.exist?
-     self.class == Object 
+  def initialize
+    @balance = 0
   end
 
 end
