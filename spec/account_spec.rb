@@ -9,7 +9,7 @@ describe Account do
       expect(account.balance).to eq 0
     end
     it 'should have an empty transaction history record' do
-      expect(account.transaction_history).to eq []
+      expect(account.transactions).to eq []
     end
   end
 
@@ -18,10 +18,10 @@ describe Account do
       add_funds
     end
     it 'should increase the balance' do
-    expect(account.balance).to eq 1000
+      expect(account.balance).to eq 1000
     end
     it 'should record the transaction' do
-    expect(account.transaction_history). to eq([{:date=>((Time.now).strftime("%d/%m/%Y")), :transaction=>"deposit", :amount=>1000, :balance=>1000}])
+      expect(account.transactions). to eq([{:date=>((Time.now).strftime("%d/%m/%Y")), :transaction=>"deposit", :amount=>1000, :balance=>1000}])
     end
   end
 
@@ -34,7 +34,7 @@ describe Account do
       expect(account.balance).to eq 750
     end
     it 'should record the transaction' do
-      expect(account.transaction_history).to eq([{:date=>((Time.now).strftime("%d/%m/%Y")), :transaction=>"deposit", :amount=>1000, :balance=>1000}, {:date=>((Time.now).strftime("%d/%m/%Y")), :transaction=>"withdrawal", :amount=>250, :balance=>750} ])
+      expect(account.transactions).to eq([{:date=>((Time.now).strftime("%d/%m/%Y")), :transaction=>"deposit", :amount=>1000, :balance=>1000}, {:date=>((Time.now).strftime("%d/%m/%Y")), :transaction=>"withdrawal", :amount=>250, :balance=>750} ])
     end
   end
 

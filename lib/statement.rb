@@ -1,7 +1,9 @@
 class Statement
 
-  def initialize(account)
-    @account = account
+  attr_reader :transactions
+
+  def initialize(transactions)
+    @transactions = transactions
   end
 
   def print_statement
@@ -16,7 +18,7 @@ private
   end
 
   def body
-    @account.transaction_history.reverse_each do | transaction |
+    @transactions.reverse_each do | transaction |
     case transaction[:transaction]
 
       when "deposit"
