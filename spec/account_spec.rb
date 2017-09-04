@@ -21,7 +21,7 @@ describe Account do
     expect(account.balance).to eq 1000
     end
     it 'should record the transaction' do
-    expect(account.transaction_history). to eq([{:date=>((Time.now).strftime("%d/%m/%Y")), :deposit=>1000}])
+    expect(account.transaction_history). to eq([{:date=>((Time.now).strftime("%d/%m/%Y")), :transaction=>"deposit", :amount=>1000}])
     end
   end
 
@@ -34,7 +34,8 @@ describe Account do
       expect(account.balance).to eq 750
     end
     it 'should record the transaction' do
-      expect(account.transaction_history).to eq([{:date=>((Time.now).strftime("%d/%m/%Y")), :deposit=>1000}, {:date=>((Time.now).strftime("%d/%m/%Y")), :withdrawal=>250} ])
+      expect(account.transaction_history).to eq([{:date=>((Time.now).strftime("%d/%m/%Y")), :transaction=>"deposit", :amount=>1000}, {:date=>((Time.now).strftime("%d/%m/%Y")), :transaction=>"withdrawal", :amount=>250} ])
+      p account.transaction_history
     end
   end
 

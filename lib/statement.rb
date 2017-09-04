@@ -8,4 +8,10 @@ class Statement
     puts "date || credit || debit || balance"
   end
 
+  def print_body
+    @account.transaction_history do | transaction |
+
+    end
+  end
+
 end
