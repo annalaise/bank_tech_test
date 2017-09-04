@@ -28,7 +28,15 @@ date || credit || debit || balance
 
 ### Planning
 
-Planning summary goes here
+**Domain Model**
+
+|Noun | Verb |
+|--------|--------|
+| client | create <br> balance <br> transaction_history <br> |
+| deposit | date <br> amount <br> record_transaction |
+| withdrawal | date <br> amount <br> record_transaction|
+| statement | print_header <br> print_transaction |
+
 
 ### Approach
 
