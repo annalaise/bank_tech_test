@@ -67,7 +67,7 @@ To see end to end features, within the cloned directory open IRB and paste the f
 require './lib/account.rb'
 require './lib/statement.rb'
 account = Account.new
-statement = Statement.new(account)
+statement = Statement.new(account.transactions)
 account.deposit(1000)
 account.deposit(2000)
 account.withdrawal(500)
