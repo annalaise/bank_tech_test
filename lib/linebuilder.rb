@@ -1,5 +1,5 @@
 class LineBuilder
-attr_reader :transactions
+  attr_reader :transactions
 
   def generate(transactions)
     transactions.reverse_each.map do |transaction|
@@ -23,5 +23,4 @@ attr_reader :transactions
   def return_withdrawal(transaction)
     "#{transaction[:date]} || || #{transaction[:amount]} || #{transaction[:balance]}"
   end
-
 end

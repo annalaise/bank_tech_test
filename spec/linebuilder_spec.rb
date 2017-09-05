@@ -1,7 +1,6 @@
 require './lib/linebuilder.rb'
 
 describe LineBuilder do
-
   context '#generate' do
     let(:linebuilder) { LineBuilder.new }
 
@@ -10,9 +9,7 @@ describe LineBuilder do
     end
 
     it 'should throw an error if transactions are passed incorrectly' do
-      expect{ linebuilder.generate(transactions_incorrect_format) }.to raise_error("transaction error")
+      expect { linebuilder.generate(transactions_incorrect_format) }.to raise_error("transaction error")
     end
-
   end
-
 end

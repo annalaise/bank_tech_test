@@ -1,6 +1,6 @@
 class Statement
   attr_reader :transactions, :linebuilder
-  HEADER = "date || credit || debit || balance"
+  HEADER = 'date || credit || debit || balance'
 
   def initialize(transactions, linebuilder)
     @transactions = transactions
@@ -21,5 +21,4 @@ class Statement
   def generate_body
     @linebuilder.generate(@transactions)
   end
-
 end

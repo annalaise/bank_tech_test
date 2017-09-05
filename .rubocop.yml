@@ -3,10 +3,8 @@ AllCops:
     - Rakefile
     - config.ru
   Excludes:
-    - db/**
-    - config/**
-    - script/**
     - Gemfile
     - Gemfile.lock
+    - spec/spec_helper.rb
 Documentation:
   Enabled: false
