@@ -11,7 +11,14 @@ def print_statement
 end
 
 def transactions_mock
-  dates = ["10/01/2012", "13/01/2012", "14/01/2012"]
+  dates = ['10/01/2012', '13/01/2012', '14/01/2012']
   transactions = [
-    {:date=>dates[0], :transaction=>"deposit", :amount=>1000, :balance=>1000}, {:date=>dates[1], :transaction=>"deposit", :amount=>2000, :balance=>3000}, {:date=>dates[2], :transaction=>"withdrawal", :amount=>500, :balance=>2500}]
+    { date: dates[0], transaction: :deposit, amount: 1000, balance: 1000 },
+    { date: dates[1], transaction: :deposit, amount: 2000, balance: 3000 },
+    { date: dates[2], transaction: :withdrawal, amount: 500, balance: 2500 }
+  ]
+  transactions
+end
+
+def line_mock
 end

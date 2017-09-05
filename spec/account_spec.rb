@@ -1,7 +1,7 @@
 describe Account do
-    subject(:account) { described_class.new }
+  subject(:account) { described_class.new }
 
-  context 'creation' do
+  context '#initialize' do
     it 'should create an account' do
       expect(account).to be_truthy
     end
@@ -13,7 +13,7 @@ describe Account do
     end
   end
 
-  context 'adding funds' do
+  context '#deposit' do
     before(:each) do
       add_funds
     end
@@ -21,11 +21,13 @@ describe Account do
       expect(account.balance).to eq 1000
     end
     it 'should record the transaction' do
-      expect(account.transactions). to eq([{:date=>((Time.now).strftime("%d/%m/%Y")), :transaction=>"deposit", :amount=>1000, :balance=>1000}])
+      expect(account.transactions). to eq([
+        { date: Time.now.strftime('%d/%m/%Y'), transaction: :deposit, amount: 1000, balance: 1000 }
+        ])
     end
   end
 
-  context 'withdrawing funds' do
+  context '#withdrawal' do
     before(:each) do
       add_funds
       withdraw_funds
@@ -34,8 +36,10 @@ describe Account do
       expect(account.balance).to eq 750
     end
     it 'should record the transaction' do
-      expect(account.transactions).to eq([{:date=>((Time.now).strftime("%d/%m/%Y")), :transaction=>"deposit", :amount=>1000, :balance=>1000}, {:date=>((Time.now).strftime("%d/%m/%Y")), :transaction=>"withdrawal", :amount=>250, :balance=>750} ])
+      expect(account.transactions).to eq([
+        { date: Time.now.strftime('%d/%m/%Y'), transaction: :deposit, amount: 1000, balance: 1000 },
+        { date: Time.now.strftime('%d/%m/%Y'), transaction: :withdrawal, amount: 250, balance: 750 }
+        ])
     end
   end
-
 end

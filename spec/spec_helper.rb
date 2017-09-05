@@ -7,10 +7,8 @@ require './lib/statement.rb'
 require 'test_helper.rb'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
+  SimpleCov::Formatter::Console])
+
 SimpleCov.start
 
 RSpec.configure do |config|
@@ -23,5 +21,4 @@ RSpec.configure do |config|
   end
 
   config.shared_context_metadata_behavior = :apply_to_host_groups
-
 end
