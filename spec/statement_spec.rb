@@ -1,9 +1,13 @@
+require './lib/statement.rb'
+
 describe Statement do
-  subject(:statement) { described_class.new(transactions_mock) }
+  let(:linebuilder) { double("linebuilder", :generate => linebuilder_mock )}
+  subject(:statement) { described_class.new(transactions_mock, linebuilder) }
 
+  context '#print_statement' do
+    it 'prints transactions in reverse order to sdtout' do
+      expect { statement.print_statement }.to output(statement_output).to_stdout
+    end
+  end 
 
-  it 'prints transactions in reverse order to sdtout' do
-    expect { statement.print_statement }.to output(
-      "date || credit || debit || balance\n14/01/2012 || || 500 || 2500\n13/01/2012 || 2000  || || 3000\n10/01/2012 || 1000  || || 1000\n").to_stdout
-  end
 end

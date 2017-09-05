@@ -1,3 +1,5 @@
+require './lib/account.rb'
+
 describe Account do
   subject(:account) { described_class.new }
 

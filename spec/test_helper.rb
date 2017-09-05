@@ -11,13 +11,13 @@ def print_statement
 end
 
 def transactions_mock
-  dates = ['10/01/2012', '13/01/2012', '14/01/2012']
-  transactions = [
-    { date: dates[0], transaction: :deposit, amount: 1000, balance: 1000 },
-    { date: dates[1], transaction: :deposit, amount: 2000, balance: 3000 },
-    { date: dates[2], transaction: :withdrawal, amount: 500, balance: 2500 }
-  ]
-  transactions
+ [{ date: '10/01/2012', transaction: :deposit, amount: 1000, balance: 1000 },
+  { date: '13/01/2012', transaction: :deposit, amount: 2000, balance: 3000 },
+  { date: '14/01/2012', transaction: :withdrawal, amount: 500, balance: 2500 }]
+end
+
+def transactions_incorrect_format
+  [{ date: '10/01/2012', transaction: :pizza, amount: 1000, balance: 1000 }]
 end
 
 def transaction_deposit
@@ -26,4 +26,12 @@ end
 
 def transaction_withdrawal
   { date: '14/01/2012', transaction: :withdrawal, amount: 500, balance: 2500 }
+end
+
+def linebuilder_mock
+  ["14/01/2012 || || 500 || 2500", "13/01/2012 || 2000  || || 3000", "10/01/2012 || 1000  || || 1000"]
+end
+
+def statement_output
+  "date || credit || debit || balance\n14/01/2012 || || 500 || 2500\n13/01/2012 || 2000  || || 3000\n10/01/2012 || 1000  || || 1000\n"
 end
