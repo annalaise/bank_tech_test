@@ -20,5 +20,10 @@ def transactions_mock
   transactions
 end
 
-def line_mock
+def transaction_deposit
+  { date: '10/01/2012', transaction: :deposit, amount: 1000, balance: 1000 }
+end
+
+def transaction_withdrawal
+  { date: '14/01/2012', transaction: :withdrawal, amount: 500, balance: 2500 }
 end

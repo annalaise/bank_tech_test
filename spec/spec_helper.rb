@@ -4,6 +4,7 @@ require 'simplecov-console'
 
 require './lib/account.rb'
 require './lib/statement.rb'
+require './lib/line.rb'
 require 'test_helper.rb'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
