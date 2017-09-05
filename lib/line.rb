@@ -5,15 +5,25 @@ attr_reader :transaction
     @transaction = transaction
   end
 
-  def create
+  def generate
     case transaction[:transaction]
     when :deposit
-      return "#{transaction[:date]} || #{transaction[:amount]}  || || #{transaction[:balance]}"
+      return_deposit(transaction)
     when :withdrawal
-      return "#{transaction[:date]} || || #{transaction[:amount]} || #{transaction[:balance]}"
+      return_withdrawal(transaction)
     else
       return 'transaction error'
     end
+  end
+
+  private
+
+  def return_deposit(transaction)
+    return "#{transaction[:date]} || #{transaction[:amount]}  || || #{transaction[:balance]}"
+  end
+
+  def return_withdrawal(transaction)
+    return "#{transaction[:date]} || || #{transaction[:amount]} || #{transaction[:balance]}"
   end
 
 end
