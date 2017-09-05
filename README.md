@@ -32,13 +32,9 @@ To plan my solution, I created a **Domain Model** (initially with classes for Wi
 
 |Noun | Verb |
 |--------|--------|
-| account | create <br> has_balance <br> reduces_balance <br> increases_balance <br> records_transactions |
-| statement | prints_header <br> print_transactions |
-
-
-### Approach
-
-
+| account | create <br> balance <br> reduce balance <br> increase balance <br> record transactions |
+| statement | print statement |
+| linebuilder | generate lines for statement |
 
 ### Stack
 
@@ -50,26 +46,29 @@ This application was built using the following:
 
 ### Test Coverage
 
-![Image](http://i.imgur.com/GWo9wXE.png)
+![Image](http://i.imgur.com/AAbOTmR.png)
 
 ### How to Use
 
 Clone this repo
 
+To clone the directory and view the test results:
 ```
 git clone git@github.com:annalaise/bank_tech_test.git
 bundle install
 rspec
 ```
 
-To see end to end features, within the cloned directory open IRB and paste the following:
+To see end to end features, within the cloned directory run `irb` and paste the following:
 ```
 require './lib/account.rb'
 require './lib/statement.rb'
+require './lib/linebuilder.rb'
 account = Account.new
-statement = Statement.new(account.transactions)
 account.deposit(1000)
 account.deposit(2000)
 account.withdrawal(500)
+linebuilder = LineBuilder.new
+statement = Statement.new(account.transactions, linebuilder)
 statement.print_statement
 ```
